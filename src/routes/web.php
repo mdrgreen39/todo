@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TodoContoroller::class, 'index']);
+Route::post('/todos', [TodoContoroller::class, 'store']);
+Route::patch('/todos/update', [TodoContoroller::class, 'update']);
+Route::delete('/todos/delete', [TodoContoroller::class, 'destroy']);
