@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TodoContoroller;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,4 @@ Route::get('/', [TodoContoroller::class, 'index']);
 Route::post('/todos', [TodoContoroller::class, 'store']);
 Route::patch('/todos/update', [TodoContoroller::class, 'update']);
 Route::delete('/todos/delete', [TodoContoroller::class, 'destroy']);
+Route::get('/categories', [CategoryController::class, 'index']);
