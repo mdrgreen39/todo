@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\TodoContoroller;
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TodoContoroller::class, 'index']);
-Route::post('/todos', [TodoContoroller::class, 'store']);
-Route::patch('/todos/update', [TodoContoroller::class, 'update']);
-Route::delete('/todos/delete', [TodoContoroller::class, 'destroy']);
+Route::get('/', [TodoController::class, 'index']);
+Route::post('/todos', [TodoController::class, 'store']);
+Route::patch('/todos/{todo_id}', [TodoController::class, 'update']);
+Route::delete('/todos/{todo_id}', [TodoController::class, 'destroy']);
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/categories', [CategoryController::class, 'store']);
+Route::patch('/categories/{category/id', [CategoryController::class, 'update']);
+Route::delete('/categories/{category_id}', [CategoryController::class, 'destroy']);
+Route::get('/todos/search', [TodoController::class, 'search']);
